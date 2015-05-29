@@ -1,13 +1,13 @@
 $(window).load(function(){
-// SETUP
-var colourMode = false;
+
+var colorMode = false;
 var standard = 16;
 var box = 512;
 function isNumeric(obj) {
     return !jQuery.isArray(obj) && (obj - parseFloat(obj) + 1) >= 0;
 }
 function prompt() {
-    bootbox.prompt("Enter grid density (e.g. 8):", function (result) {
+    bootbox.prompt("Enter canvas size:", function (result) {
         if (result !== null && isNumeric(result)) {
             $("#container").empty();
             initGrid(result);
@@ -27,7 +27,7 @@ function initGrid(size) {
     initHover();
 }
 function initHover() {
-    if (colourMode) {
+    if (colorMode) {
         $(".pixel").mouseenter(function () {
             if ($(this).css("background-color") !== "rgb(238, 238, 238)") {
                 var block = $.Color($(this).css("background-color"));
@@ -51,16 +51,16 @@ function initButtons() {
     $("#new-button").on("click", function () {
         prompt();
     });
-    $("#rainbow-button").on("click", function () {
-        if (colourMode) {
-            colourMode = false;
+    $("#rainbow-button, #monochrome-button").on("click", function () {
+        if (colorMode) {
+            colorMode = false;
         } else {
-            colourMode = true;
+            colorMode = true;
         }
         $(".pixel").unbind("mouseenter");
         initHover();
     });
-    // BOOTSTRAP TWEAKS
+
     $(".btn").mouseup(function () {
         $(this).blur();
     });
