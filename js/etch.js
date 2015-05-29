@@ -1,6 +1,6 @@
 $(window).load(function(){
 
-var colourMode = false;
+var colorMode = false;
 var standard = 16;
 var box = 512;
 function isNumeric(obj) {
@@ -27,7 +27,7 @@ function initGrid(size) {
     initHover();
 }
 function initHover() {
-    if (colourMode) {
+    if (colorMode) {
         $(".pixel").mouseenter(function () {
             if ($(this).css("background-color") !== "rgb(238, 238, 238)") {
                 var block = $.Color($(this).css("background-color"));
@@ -52,22 +52,30 @@ function initButtons() {
         prompt();
     });
     $("#rainbow-button").on("click", function () {
-        if (colourMode) {
-            colourMode = false;
+        if (colorMode) {
+            colorMode = false;
         } else {
-            colourMode = true;
+            colorMode = true;
         }
         $(".pixel").unbind("mouseenter");
         initHover();
     });
-    // BOOTSTRAP TWEAKS
+    $("#monochrome-button").on("click", function () {
+        if (colorMode) {
+            colorMode = true;
+        } else {
+            colorMode = false;
+        }
+        $(".pixel").unbind("mouseenter");
+        initHover();
+    });
     $(".btn").mouseup(function () {
         $(this).blur();
     });
 }
 
 
-$(document).ready(function () {
+$(document).load(function () {
     initGrid(standard);
     initButtons();
 });
