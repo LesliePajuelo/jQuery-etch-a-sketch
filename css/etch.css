@@ -1,0 +1,39 @@
+.panel {
+width: 100%;
+}
+#title {
+height: 100px;
+line-height: 100px;
+text-align: center;
+font-family:'Comfortaa', cursive;
+font-size: 2.5em;
+margin: 1px 0px;
+}
+#buttons {
+text-align: center;
+padding: 10px 0;
+}
+button {
+margin: 0px 5px;
+}
+#container {
+width: 512px;
+height: 512px;
+margin: 0 auto;
+line-height: 0;
+}
+.pixel {
+padding: 0;
+margin: 0;
+line-height: 0;
+background-color: #eee;
+display: inline-block;
+}
+.no-select {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
