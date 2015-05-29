@@ -51,7 +51,7 @@ function initButtons() {
     $("#new-button").on("click", function () {
         prompt();
     });
-    $("#rainbow-button").on("click", function () {
+    $("#rainbow-button, #monochrome-button").on("click", function () {
         if (colorMode) {
             colorMode = false;
         } else {
@@ -60,15 +60,7 @@ function initButtons() {
         $(".pixel").unbind("mouseenter");
         initHover();
     });
-    $("#monochrome-button").on("click", function () {
-        if (colorMode) {
-            colorMode = true;
-        } else {
-            colorMode = false;
-        }
-        $(".pixel").unbind("mouseenter");
-        initHover();
-    });
+
     $(".btn").mouseup(function () {
         $(this).blur();
     });
