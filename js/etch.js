@@ -1,5 +1,5 @@
 $(window).load(function(){
-// SETUP
+
 var colourMode = false;
 var standard = 16;
 var box = 512;
@@ -7,7 +7,7 @@ function isNumeric(obj) {
     return !jQuery.isArray(obj) && (obj - parseFloat(obj) + 1) >= 0;
 }
 function prompt() {
-    bootbox.prompt("Enter grid density (e.g. 8):", function (result) {
+    bootbox.prompt("Enter canvas size:", function (result) {
         if (result !== null && isNumeric(result)) {
             $("#container").empty();
             initGrid(result);
