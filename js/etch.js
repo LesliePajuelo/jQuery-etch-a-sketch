@@ -75,7 +75,7 @@ function initButtons() {
 }
 
 
-$(document).load(function () {
+$(document).ready(function () {
     initGrid(standard);
     initButtons();
 });
